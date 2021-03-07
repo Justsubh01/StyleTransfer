@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Flask</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary">
+        <h3  class="mb-3" style="font-weight: 300">Neural Style Transfer</h3>
+    </nav>
+    <br>
+    <br>
+    <header class="masthead">
+
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-4 my-auto">
+                    <div class="container">
+                        <img src= {{content}} class="img-responsive" alt="content" style="height: auto; width: 100%">
+                        <label>Content Image</label>
+                    </div>
+                </div>
+                <div class="col-lg-4 my-auto ">
+                    <div class="container">
+                        <img src= {{style}} class="img-responsive" alt="style" style="height: auto; width: 100%">
+                        <label>Style Image</label>
+                    </div>
+                </div>
+                <div class="col-lg-4 my-auto ">
+                    <div class="container">
+                      <img src= {{result}} class="img-responsive" style="height: auto; width: 100%" alt="result">
+                      <label>Generated Image</label>
+                  </div>
+              </div>
+            </div>
+          
+        </div>
+    </header>
+
+  </body>
+</html>
