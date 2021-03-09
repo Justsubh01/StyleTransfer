@@ -26,7 +26,7 @@ def vgg_model():
 
 
 
-def image_loader(img_path, max_size=300, shape=None):
+def image_loader(img_path, max_size=500, shape=None):
     # In case img_path is web address
     if 'http' in img_path:
         response = requests.get(img_path)
@@ -100,7 +100,7 @@ def gram_matrix(tensor):
 
 
 def style_on_target(model, content_image,style_image):
-    
+
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     model.to(device)

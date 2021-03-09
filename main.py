@@ -22,7 +22,7 @@ except:
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/content'
-app.config['MAX_CONTENT_LENGTH'] = 2 * 1024 * 1024 
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024 
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.jpeg', '.gif']
 
 @app.route('/')
