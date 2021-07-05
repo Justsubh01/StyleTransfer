@@ -23,7 +23,7 @@ except:
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/content'
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024 
-app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.jpeg', '.gif']
+app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.jpeg', '.gif','.webp']
 
 @app.route('/')
 def index():
@@ -35,8 +35,8 @@ def upload_file():
     content_file = request.files['content-file']
     style_file = request.files['style-file']
     files = [content_file, style_file]
-    content_name = str(uuid.uuid4()) + ".png"
-    style_name = str(uuid.uuid4()) + ".png"
+    content_name = str(uuid.uuid4()) + ".jpg"
+    style_name = str(uuid.uuid4()) + ".jpg"
     file_names = [content_name, style_name]
     for i, file in enumerate(files):
         if file.filename == '':
@@ -59,4 +59,5 @@ def upload_file():
 ##########################################################################
 
 if __name__=='__main__':
+    
     app.run(debug=True)
