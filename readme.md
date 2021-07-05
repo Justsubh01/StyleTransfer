@@ -1,5 +1,7 @@
 # Neural Style Transfer
 
+![index](./static/uploads/content/index.jpg)
+
 * This project is based on Leon Gatys's paper ["A Neural Algorithm of Artistic Style"](https://arxiv.org/abs/1508.06576).
 
 * full code base explanation is available [here](https://www.kaggle.com/billiemage/style-transfer-with-deep-neural-networks).
@@ -34,3 +36,6 @@ And then activate the environment by:-
 
 * The last step is to go to your browser and search `localhost:5000/`.
 
+### Result:-
+
+![result](./static/uploads/content/result.jpg)
