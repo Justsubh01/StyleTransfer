@@ -15,12 +15,20 @@ try:
 except:
     print("Some Modules are missing.....")
 ############################################################################################################################
+
+device = torch.device("cuda" if torch.cuda.is_available() else 'cpu')
+import gc
+torch.cuda.empty_cache()
+gc.collect()
+
 def vgg_model():
     # Instantiate vgg model
     vgg = models.vgg19(pretrained=True).features
     # we dont need VGG parameters so freeze it
     for param in vgg.parameters():
         param.requires_grad_(False)
+    
+    vgg = vgg.to(device)
 
     return vgg
 
@@ -50,7 +58,7 @@ def image_loader(img_path, max_size=500, shape=None):
         transforms.Normalize((0.485, 0.456, 0.406), 
                             (0.229, 0.224, 0.225))
     ])
-
+    
     image = in_transform(image)[:3,:,:].unsqueeze(0)
 
     return image
@@ -165,6 +173,9 @@ def parameter_gen(content_path, style_path):
     content_path = "static/uploads/content/" + content_path
     style_path = "static/uploads/content/" + style_path
 
+    torch.cuda.empty_cache()
+    gc.collect()
+
     vgg = vgg_model()
 
     params = {
@@ -172,6 +183,8 @@ def parameter_gen(content_path, style_path):
         'content_image' : content_path,
         'style_image' : style_path
     }
+    torch.cuda.empty_cache()
+    gc.collect()
 
     f_name = style_on_target(**params)
     gc.collect()
