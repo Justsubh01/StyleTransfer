@@ -19,6 +19,7 @@
     <header class="masthead">
         
         <div class="container h-100">
+
             <div class="row h-100">
                 <div class="col-lg-4 my-auto">
                     <div class="container">
@@ -35,13 +36,18 @@
                 <div class="col-lg-4 my-auto ">
                     <div class="container">
                       <img src= {{result}} class="img-responsive" style="height: auto; width: 100%" alt="result">
-                      <label>Generated Image</label>
+                      <label>Result</label>
                   </div>
+                
               </div>
+              
             </div>
-          
+            <center><a href="{{url_for("return_files",filename=result_filename)}}"><button type="button" class="btn btn-primary btn-sm">Download Result Image</button></a></center>
         </div>
+      
     </header>
+
+      
 
   </body>
 </html>
