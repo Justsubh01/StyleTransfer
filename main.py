@@ -3,7 +3,6 @@ try:
     import imghdr
     import os
     import uuid
-    import ntpath
     from flask import Flask, render_template, request, redirect, url_for, abort, \
         send_from_directory , flash, jsonify, make_response,send_file
     from werkzeug.utils import secure_filename
@@ -23,7 +22,6 @@ app.config['UPLOAD_FOLDER'] = './static/uploads/content'
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024 
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.jpeg', '.gif','.webp']
 
-ntpath.basename("static/uploads/content/")
 
 @app.route('/')
 def index():
